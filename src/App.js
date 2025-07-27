@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <Navbar title="ReactApp" about="Nice" />
-      <div className="container">
+      <div className="container my-3">
         <TextForm heading="Enter text to analyze below" />
       </div>
     </>
