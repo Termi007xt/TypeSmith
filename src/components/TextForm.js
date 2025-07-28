@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useSpeechSynthesis } from "react-speech-kit";
+// import { useSpeechSynthesis } from "react-speech-kit";
 
 export default function TextForm(props) {
   const toUppercase = () => {
@@ -21,15 +21,15 @@ export default function TextForm(props) {
     setText(newText);
   };
 
-  const fnr = () => {
-    let regex = RegExp(findText, "g");
-    let newText = text.replace(regex, replaceText);
-    setText(newText);
-  };
+  // const fnr = () => {
+  //   let regex = RegExp(findText, "g");
+  //   let newText = text.replace(regex, replaceText);
+  //   setText(newText);
+  // };
 
-  const TextToSpeech = () => {
-    speak({ text });
-  };
+  // const TextToSpeech = () => {
+  //   speak({ text });
+  // };
 
   const change = (event) => {
     setText(event.target.value);
@@ -51,13 +51,16 @@ export default function TextForm(props) {
   };
 
   const [text, setText] = useState("");
-  const [findText, setFindText] = useState("");
-  const [replaceText, setReplaceText] = useState("");
-  const { speak, cancel, speaking, supported, voices } = useSpeechSynthesis();
+  // const [findText, setFindText] = useState("");
+  // const [replaceText, setReplaceText] = useState("");
+  // const { speak, cancel, speaking, supported, voices } = useSpeechSynthesis();
 
   return (
     <>
-      <div className="container my-2">
+      <div
+        className="container my-2"
+        style={{ color: props.mode === "dark" ? "white" : "black" }}
+      >
         <h1>{props.heading}</h1>
         <div className="mb-3">
           <textarea
@@ -67,6 +70,11 @@ export default function TextForm(props) {
             onChange={change}
             id="myBox"
             rows="8"
+            style={{
+              backgroundColor: props.mode === "dark" ? "#001a45" : "white",
+
+              color: props.mode === "dark" ? "white" : "black",
+            }}
           ></textarea>
         </div>
 
@@ -94,7 +102,7 @@ export default function TextForm(props) {
           Download .txt ⬇️
         </button>
 
-        <button className="btn btn-outline-primary mx-3" onClick={TextToSpeech}>
+        {/* <button className="btn btn-outline-primary mx-3" onClick={TextToSpeech}>
           Speak 🔊
         </button>
 
@@ -104,9 +112,14 @@ export default function TextForm(props) {
           disabled={!speaking}
         >
           Stop 🔇
-        </button>
+        </button> */}
 
-        <div className="my-3">
+        {/* <div
+          className="my-3"
+          style={{
+            color: props.mode === "dark" ? "white" : "black",
+          }}
+        >
           <input
             type="text"
             className="form-control mb-2"
@@ -124,16 +137,19 @@ export default function TextForm(props) {
           <button className="btn btn-outline-primary mx-3" onClick={fnr}>
             Find and replace
           </button>
-        </div>
+        </div> */}
       </div>
-      <div className="container my-3">
+      <div
+        className="container my-3"
+        style={{ color: props.mode === "dark" ? "white" : "black" }}
+      >
         <h2>Your text summary</h2>
         <p>
           {text.split(" ").length} words - {text.length} characters
         </p>
         <p>{0.008 * text.split(" ").length} Minutes to read</p>
         <h3>Preview</h3>
-        <pre>{text}</pre>
+        <pre>{text.length > 0 ? text : "Enter something to preview here"}</pre>
       </div>
     </>
   );
