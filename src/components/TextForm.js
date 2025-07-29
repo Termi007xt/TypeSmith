@@ -5,20 +5,24 @@ export default function TextForm(props) {
   const toUppercase = () => {
     let newText = text.toUpperCase();
     setText(newText);
+    props.showAlert("Converted to Uppercase", "primary");
   };
 
   const toLowercase = () => {
     let newText = text.toLowerCase();
     setText(newText);
+    props.showAlert("Converted to Lowercase", "primary");
   };
 
   const clear = () => {
     setText("");
+    props.showAlert("Text has been cleared", "primary");
   };
 
   const trim = () => {
     let newText = text.trim().replace(/\s+/g, " ");
     setText(newText);
+    props.showAlert("Text has been trimmed", "primary");
   };
 
   // const fnr = () => {
@@ -39,6 +43,7 @@ export default function TextForm(props) {
     navigator.clipboard.writeText(text).then(() => {
       alert("Text copied to clipboard!");
     });
+    props.showAlert("Text has been copied to clipboard", "primary");
   };
 
   const download = () => {
@@ -48,6 +53,7 @@ export default function TextForm(props) {
     link.download = "textform-output.txt";
     link.click();
     URL.revokeObjectURL(link.href);
+    props.showAlert("Text downloaded", "primary");
   };
 
   const [text, setText] = useState("");
@@ -71,7 +77,7 @@ export default function TextForm(props) {
             id="myBox"
             rows="8"
             style={{
-              backgroundColor: props.mode === "dark" ? "#001a45" : "white",
+              backgroundColor: props.mode === "dark" ? "grey" : "white",
 
               color: props.mode === "dark" ? "white" : "black",
             }}
