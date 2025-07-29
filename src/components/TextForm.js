@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import { useSpeechSynthesis } from "react-speech-kit";
 
 export default function TextForm(props) {
   const toUppercase = () => {
@@ -24,16 +23,6 @@ export default function TextForm(props) {
     setText(newText);
     props.showAlert("Text has been trimmed", "primary");
   };
-
-  // const fnr = () => {
-  //   let regex = RegExp(findText, "g");
-  //   let newText = text.replace(regex, replaceText);
-  //   setText(newText);
-  // };
-
-  // const TextToSpeech = () => {
-  //   speak({ text });
-  // };
 
   const change = (event) => {
     setText(event.target.value);
@@ -77,7 +66,7 @@ export default function TextForm(props) {
             id="myBox"
             rows="8"
             style={{
-              backgroundColor: props.mode === "dark" ? "grey" : "white",
+              backgroundColor: props.mode === "dark" ? "#59739e" : "white",
 
               color: props.mode === "dark" ? "white" : "black",
             }}
@@ -107,18 +96,6 @@ export default function TextForm(props) {
         <button className="btn btn-outline-primary mx-3" onClick={download}>
           Download .txt ⬇️
         </button>
-
-        {/* <button className="btn btn-outline-primary mx-3" onClick={TextToSpeech}>
-          Speak 🔊
-        </button>
-
-        <button
-          className="btn btn-outline-danger mx-3"
-          onClick={cancel}
-          disabled={!speaking}
-        >
-          Stop 🔇
-        </button> */}
 
         {/* <div
           className="my-3"
@@ -151,7 +128,11 @@ export default function TextForm(props) {
       >
         <h2>Your text summary</h2>
         <p>
-          {text.split(" ").length} words - {text.length} characters
+          {text.length > 0
+            ? `${text.trim().replace(/\s+/g, " ").split(" ").length} words - ${
+                text.length
+              } characters `
+            : `0 words - 0 characters`}
         </p>
         <p>{0.008 * text.split(" ").length} Minutes to read</p>
         <h3>Preview</h3>
