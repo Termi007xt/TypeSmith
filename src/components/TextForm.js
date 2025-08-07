@@ -73,27 +73,36 @@ export default function TextForm(props) {
           ></textarea>
         </div>
 
-        <button className="btn btn-outline-primary mx-3" onClick={toUppercase}>
+        <button
+          className="btn btn-outline-primary mx-3 my-1"
+          onClick={toUppercase}
+        >
           Convert to Uppercase
         </button>
 
-        <button className="btn btn-outline-primary mx-3" onClick={toLowercase}>
+        <button
+          className="btn btn-outline-primary mx-3 my-1"
+          onClick={toLowercase}
+        >
           Convert to Lowercase
         </button>
 
-        <button className="btn btn-outline-primary mx-3" onClick={clear}>
+        <button className="btn btn-outline-primary mx-3 my-1" onClick={clear}>
           Clear
         </button>
 
-        <button className="btn btn-outline-primary mx-3" onClick={trim}>
+        <button className="btn btn-outline-primary mx-3 my-1" onClick={trim}>
           Trim
         </button>
 
-        <button className="btn btn-outline-primary mx-3" onClick={ccopy}>
+        <button className="btn btn-outline-primary mx-3 my-1" onClick={ccopy}>
           Copy to clipboard
         </button>
 
-        <button className="btn btn-outline-primary mx-3" onClick={download}>
+        <button
+          className="btn btn-outline-primary mx-3 my-1"
+          onClick={download}
+        >
           Download .txt ⬇️
         </button>
 
