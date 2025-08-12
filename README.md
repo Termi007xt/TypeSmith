@@ -23,7 +23,7 @@ Built with a flexible custom theme engine for a fully personalized UI/UX. Perfec
 *Editor interface for text input and transformation tools.*
 
 ![Screenshot – Theming Example](images/filled.png)  
-*Custom theme applied to Typesmith for a personalized look.*
+*Real time stats displayed on filling input*
 
 ---
 
