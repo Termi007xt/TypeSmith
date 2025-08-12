@@ -19,10 +19,10 @@ Built with a flexible custom theme engine for a fully personalized UI/UX. Perfec
 
 ## 🖼️ Screenshots
 
-![Screenshot – Editor View](images/blank.png)  
+![Screenshot – Editor View](images/b-blank.png)  
 *Editor interface for text input and transformation tools.*
 
-![Screenshot – Theming Example](images/filled.png)  
+![Screenshot – Theming Example](images/b-filled.png)  
 *Real time stats displayed on filling input*
 
 ---
