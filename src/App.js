@@ -37,7 +37,7 @@ function App() {
     <>
       <Router>
         <Navbar
-          title="TextUtils"
+          title="TypeSmith"
           about="About"
           mode={mode}
           toggleMode={toggleMode}
