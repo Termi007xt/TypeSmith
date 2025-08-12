@@ -143,7 +143,8 @@ export default function TextForm(props) {
               } characters `
             : `0 words - 0 characters`}
         </p>
-        <p>{0.008 * text.split(" ").length} Minutes to read</p>
+        <p>{text.length > 0 ? `${0.008 * text.split(" ").length}` : "0"} Minutes
+          to read</p>
         <h3>Preview</h3>
         <pre>{text.length > 0 ? text : "Type something to preview here"}</pre>
       </div>
